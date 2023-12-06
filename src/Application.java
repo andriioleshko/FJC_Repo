@@ -3,24 +3,19 @@ import java.util.Scanner;
 public class Application {
 
     public static void main(String[] args) {
-        // Greeting
+
         String greeting = "Hi, I'm just a simple java calculator and I can do addition, subtraction" +
-        ", multiplication and division of two numbers!";
+                ", multiplication and division of two numbers!";
         System.out.println(greeting);
 
-        // Create scanner object
         Scanner input = new Scanner(System.in);
 
-        // Getting numbers and the command from our user
         System.out.print("Let's start with the first number - please enter it: ");
         int value1 = input.nextInt();
         System.out.print("And now please choose the command (+-*/): ");
         String command = input.next();
         System.out.print("Now enter the second number: ");
         int value2 = input.nextInt();
-
-        // Getting the command
-
 
         float result = 0;
         String wrongInput = "";
@@ -41,11 +36,9 @@ public class Application {
                 wrongInput = "You entered unacceptable command.";
         }
 
-        // Printing out the result or error message
         if (wrongInput.equals("")) {
-            System.out.printf("%d %s %d = %.2f",value1,command,value2,result);
-        }
-        else {
+            System.out.printf("%d %s %d = %.2f", value1, command, value2, result);
+        } else {
             System.out.println(wrongInput);
         }
 
