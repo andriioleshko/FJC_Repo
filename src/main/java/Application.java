@@ -2,6 +2,37 @@ package main.java;
 
 import java.util.Scanner;
 
+class Operations {
+
+    static void addTwoNumbers(double value1, double value2) {
+        double result = value1 + value2;
+        String command = "+";
+        printTheResultOfOperation(value1, value2, result, command);
+    }
+
+    static void subtractTwoNumbers(double value1, double value2) {
+        double result = value1 - value2;
+        String command = "-";
+        printTheResultOfOperation(value1, value2, result, command);
+    }
+
+    static void multiplyTwoNumbers(double value1, double value2) {
+        double result = value1 * value2;
+        String command = "*";
+        printTheResultOfOperation(value1, value2, result, command);
+    }
+
+    static void divideTwoNumbers(double value1, double value2) {
+        double result = value1 / value2;
+        String command = "/";
+        printTheResultOfOperation(value1, value2, result, command);
+    }
+
+    static void printTheResultOfOperation(double value1, double value2, double result, String command) {
+        System.out.printf("%.2f %s %.2f = %.2f", value1, command, value2, result);
+    }
+}
+
 public class Application {
 
     public static void main(String[] args) {
@@ -13,35 +44,18 @@ public class Application {
         Scanner input = new Scanner(System.in);
 
         System.out.print("Let's start with the first number - please enter it: ");
-        int value1 = input.nextInt();
+        double value1 = input.nextDouble();
         System.out.print("And now please choose the command (+-*/): ");
         String command = input.next();
         System.out.print("Now enter the second number: ");
-        int value2 = input.nextInt();
+        double value2 = input.nextDouble();
 
-        float result = 0;
-        String wrongInput = "";
         switch (command) {
-            case "+":
-                result = value1 + value2;
-                break;
-            case "-":
-                result = value1 - value2;
-                break;
-            case "*":
-                result = value1 * value2;
-                break;
-            case "/":
-                result = value1 / value2;
-                break;
-            default:
-                wrongInput = "You entered unacceptable command.";
-        }
-
-        if (wrongInput.equals("")) {
-            System.out.printf("%d %s %d = %.2f", value1, command, value2, result);
-        } else {
-            System.out.println(wrongInput);
+            case "+" -> Operations.addTwoNumbers(value1, value2);
+            case "-" -> Operations.subtractTwoNumbers(value1, value2);
+            case "*" -> Operations.multiplyTwoNumbers(value1, value2);
+            case "/" -> Operations.divideTwoNumbers(value1, value2);
+            default -> System.out.println("You entered unacceptable command.");
         }
 
     }
