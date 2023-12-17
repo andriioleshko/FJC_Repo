@@ -2,37 +2,6 @@ package main.java;
 
 import java.util.Scanner;
 
-class Operations {
-
-    static void addTwoNumbers(double value1, double value2) {
-        double result = value1 + value2;
-        String command = "+";
-        printTheResultOfOperation(value1, value2, result, command);
-    }
-
-    static void subtractTwoNumbers(double value1, double value2) {
-        double result = value1 - value2;
-        String command = "-";
-        printTheResultOfOperation(value1, value2, result, command);
-    }
-
-    static void multiplyTwoNumbers(double value1, double value2) {
-        double result = value1 * value2;
-        String command = "*";
-        printTheResultOfOperation(value1, value2, result, command);
-    }
-
-    static void divideTwoNumbers(double value1, double value2) {
-        double result = value1 / value2;
-        String command = "/";
-        printTheResultOfOperation(value1, value2, result, command);
-    }
-
-    static void printTheResultOfOperation(double value1, double value2, double result, String command) {
-        System.out.printf("%.2f %s %.2f = %.2f", value1, command, value2, result);
-    }
-}
-
 public class Application {
 
     public static void main(String[] args) {
@@ -51,12 +20,40 @@ public class Application {
         double value2 = input.nextDouble();
 
         switch (command) {
-            case "+" -> Operations.addTwoNumbers(value1, value2);
-            case "-" -> Operations.subtractTwoNumbers(value1, value2);
-            case "*" -> Operations.multiplyTwoNumbers(value1, value2);
-            case "/" -> Operations.divideTwoNumbers(value1, value2);
+            case "+" -> addition(value1, value2);
+            case "-" -> subtraction(value1, value2);
+            case "*" -> multiplication(value1, value2);
+            case "/" -> division(value1, value2);
             default -> System.out.println("You entered unacceptable command.");
         }
 
+    }
+
+    static void addition(double value1, double value2) {
+        double result = value1 + value2;
+        String command = "+";
+        printTheResultOfOperation(value1, value2, result, command);
+    }
+
+    static void subtraction(double value1, double value2) {
+        double result = value1 - value2;
+        String command = "-";
+        printTheResultOfOperation(value1, value2, result, command);
+    }
+
+    static void multiplication(double value1, double value2) {
+        double result = value1 * value2;
+        String command = "*";
+        printTheResultOfOperation(value1, value2, result, command);
+    }
+
+    static void division(double value1, double value2) {
+        double result = value1 / value2;
+        String command = "/";
+        printTheResultOfOperation(value1, value2, result, command);
+    }
+
+    static void printTheResultOfOperation(double value1, double value2, double result, String command) {
+        System.out.printf("%.2f %s %.2f = %.2f", value1, command, value2, result);
     }
 }
