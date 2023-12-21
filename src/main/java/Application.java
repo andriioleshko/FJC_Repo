@@ -29,31 +29,31 @@ public class Application {
 
     }
 
-    static void addition(double value1, double value2) {
+    private static void addition(double value1, double value2) {
         double result = value1 + value2;
         String command = "+";
         printTheResultOfOperation(value1, value2, result, command);
     }
 
-    static void subtraction(double value1, double value2) {
+    private static void subtraction(double value1, double value2) {
         double result = value1 - value2;
         String command = "-";
         printTheResultOfOperation(value1, value2, result, command);
     }
 
-    static void multiplication(double value1, double value2) {
+    private static void multiplication(double value1, double value2) {
         double result = value1 * value2;
         String command = "*";
         printTheResultOfOperation(value1, value2, result, command);
     }
 
-    static void division(double value1, double value2) {
+    private static void division(double value1, double value2) {
         double result = value1 / value2;
         String command = "/";
         printTheResultOfOperation(value1, value2, result, command);
     }
 
-    static void printTheResultOfOperation(double value1, double value2, double result, String command) {
+    private static void printTheResultOfOperation(double value1, double value2, double result, String command) {
         System.out.printf("%.2f %s %.2f = %.2f", value1, command, value2, result);
     }
 }
