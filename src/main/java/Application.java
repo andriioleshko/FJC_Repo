@@ -13,36 +13,47 @@ public class Application {
         Scanner input = new Scanner(System.in);
 
         System.out.print("Let's start with the first number - please enter it: ");
-        int value1 = input.nextInt();
+        double value1 = input.nextDouble();
         System.out.print("And now please choose the command (+-*/): ");
         String command = input.next();
         System.out.print("Now enter the second number: ");
-        int value2 = input.nextInt();
+        double value2 = input.nextDouble();
 
-        float result = 0;
-        String wrongInput = "";
         switch (command) {
-            case "+":
-                result = value1 + value2;
-                break;
-            case "-":
-                result = value1 - value2;
-                break;
-            case "*":
-                result = value1 * value2;
-                break;
-            case "/":
-                result = value1 / value2;
-                break;
-            default:
-                wrongInput = "You entered unacceptable command.";
+            case "+" -> addition(value1, value2);
+            case "-" -> subtraction(value1, value2);
+            case "*" -> multiplication(value1, value2);
+            case "/" -> division(value1, value2);
+            default -> System.out.println("You entered unacceptable command.");
         }
 
-        if (wrongInput.equals("")) {
-            System.out.printf("%d %s %d = %.2f", value1, command, value2, result);
-        } else {
-            System.out.println(wrongInput);
-        }
+    }
 
+    private static void addition(double value1, double value2) {
+        double result = value1 + value2;
+        String command = "+";
+        printTheResultOfOperation(value1, value2, result, command);
+    }
+
+    private static void subtraction(double value1, double value2) {
+        double result = value1 - value2;
+        String command = "-";
+        printTheResultOfOperation(value1, value2, result, command);
+    }
+
+    private static void multiplication(double value1, double value2) {
+        double result = value1 * value2;
+        String command = "*";
+        printTheResultOfOperation(value1, value2, result, command);
+    }
+
+    private static void division(double value1, double value2) {
+        double result = value1 / value2;
+        String command = "/";
+        printTheResultOfOperation(value1, value2, result, command);
+    }
+
+    private static void printTheResultOfOperation(double value1, double value2, double result, String command) {
+        System.out.printf("%.2f %s %.2f = %.2f", value1, command, value2, result);
     }
 }
