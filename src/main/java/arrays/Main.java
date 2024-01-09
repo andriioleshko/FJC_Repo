@@ -39,6 +39,18 @@ public class Main {
         removeUnnecessaryElements(newNumbersArrayList);
         System.out.println("Updated ArrayList (removed all numbers that are divisible by 3) is:");
         System.out.println(newNumbersArrayList);
+
+        String objMethods = "Here is a method summary for Object in Java:";
+        objMethods += "\n-> clone()\n-> equals(Object obj)\n-> finalize()\n-> getClass()\n-> hashCode()\n-> notify()";
+        objMethods += "\n-> notifyAll()\n-> toString()\n-> wait()\n-> wait(long timeout)\n-> wait(long timeout, int nanos)";
+        System.out.printf("\n%s", objMethods);
+
+        System.out.println("\n\nArrays in Java have fixed size because they are implemented as a contiguous block of"
+            + " memory and need specified amount of memory to be reserved when it's initialized.\nBecause of"
+            + " that JVM can directly access needed element of array by calculating in the easy form the exact"
+            + " memory address where it's stored (using memory address of the first element, using the size of the"
+            + " declared type of data stored in this array and multiplying by the index of the element).\n"
+            + "It is quicker than the same operation for ArrayList or LinkedList. ");
     }
 
     static Integer[] convertArray(int[] oldArray) {
