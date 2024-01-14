@@ -63,10 +63,11 @@ public class Main {
 
     static int sumOfArrayElements(int[] array, boolean onlyPositives) {
         int result = 0;
-        for (int el : array)
+        for (int el : array) {
             if (el > 0 || (el < 0 && !onlyPositives)) {
                 result += el;
             }
+        }
         return result;
     }
 
