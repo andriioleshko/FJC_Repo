@@ -1,4 +1,4 @@
-package main.java.robots.robot;
+package com.myfjc.robots.robot;
 
 public enum TypeOfRobot {
     PRIMITIVE("1.0.0"),

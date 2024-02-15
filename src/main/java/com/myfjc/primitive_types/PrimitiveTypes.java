@@ -1,3 +1,5 @@
+package com.myfjc.primitive_types;
+
 public class PrimitiveTypes {
 
     public static void main(String[] args) {
@@ -23,7 +25,7 @@ public class PrimitiveTypes {
         System.out.println("If you add to the max value of numeric variable with 1, we will have an " +
                 "overflow of this variable.");
         System.out.println("For example, increasing our max value of integer (" + Integer.MAX_VALUE + ") " +
-                "by 1 will give us the min value of our variable (" + (Integer.MAX_VALUE + 1) + ").");
+                    "by 1 will give us the min value of our variable (" + (Integer.MAX_VALUE + 1) + ").");
 
     }
 

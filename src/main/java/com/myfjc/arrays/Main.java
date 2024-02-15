@@ -1,4 +1,4 @@
-package main.java.arrays;
+package com.myfjc.arrays;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -47,10 +47,12 @@ public class Main {
         System.out.printf("\n%s", objMethods);
 
         System.out.println("\n\n");
-        System.out.println("""
-                Arrays in Java have fixed size because they are implemented as a contiguous block of memory and need specified amount of memory to be reserved when it's initialized.
-                Because of that JVM can directly access needed element of array by calculating in the easy form the exact memory address where it's stored (using memory address of the first element, using the size of the declared type of data stored in this array and multiplying by the index of the element).
-                It is quicker than the same operation for ArrayList or LinkedList.\s""");
+        System.out.println("Arrays in Java have fixed size because they are implemented as a contiguous block of memory " +
+                           "and need specified amount of memory to be reserved when it's initialized.\n" +
+                           "Because of that JVM can directly access needed element of array by calculating in the easy " +
+                           "form the exact memory address where it's stored (using memory address of the first element, " +
+                           "using the size of the declared type of data stored in this array and multiplying by the " +
+                           "index of the element).\nIt is quicker than the same operation for ArrayList or LinkedList.");
     }
 
     static Integer[] convertArray(int[] oldArray) {

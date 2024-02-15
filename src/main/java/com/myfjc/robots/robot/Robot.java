@@ -1,9 +1,9 @@
-package main.java.robots.robot;
+package com.myfjc.robots.robot;
 
-import main.java.robots.actions.Defence;
-import main.java.robots.actions.Move;
-import main.java.robots.actions.Shoot;
-import main.java.robots.actions.Yell;
+import com.myfjc.robots.actions.Defence;
+import com.myfjc.robots.actions.Move;
+import com.myfjc.robots.actions.Shoot;
+import com.myfjc.robots.actions.Yell;
 
 public abstract class Robot implements Shoot, Move, Yell, Defence {
     private final String name;

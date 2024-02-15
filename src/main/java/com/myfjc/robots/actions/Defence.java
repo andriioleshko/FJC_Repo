@@ -1,4 +1,4 @@
-package main.java.robots.actions;
+package com.myfjc.robots.actions;
 
 public interface Defence {
     String defence();
