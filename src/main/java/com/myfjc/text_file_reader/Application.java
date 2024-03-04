@@ -10,8 +10,8 @@ public class Application {
     public static void main(String[] args) throws FileNotFoundException {
 
         try {
-            File myLyrics = new File("/home/el_barto/IdeaProjects/FJC_Repo/src/main/java/text_file_reader"
-                    + "/data.txt");
+            File myLyrics = new File("/home/el_barto/IdeaProjects/FJC_Repo/src/main/resources"
+                    + "/texts/data.txt");
             String[] listOfWords = getListOfWordsFromFile(myLyrics);
 
             List<Counter> countersOfBadOrShortWords = new ArrayList<>();
@@ -33,7 +33,6 @@ public class Application {
                     totalNumberOfGoodWords);
             System.out.printf("Total number of bad (or short) words in the analyzed text-file is %d.\n",
                     totalNumberOfBadWords);
-            /*System.out.println(countersOfBadOrShortWords.toString());*/
             String beginning = "The list of all bad and short words from this song are:";
             printFirstNWordsFromList(countersOfBadOrShortWords.size(), countersOfBadOrShortWords, beginning);
 
@@ -63,17 +62,20 @@ public class Application {
     }
 
     private static boolean itsABadWord(String word) {
-        for (String badWord : getListOfBadWords()) {
-            if (word.equalsIgnoreCase(badWord)) {
-                return true;
-            }
-        }
-        return false;
+        return getListOfBadWords().contains(word.toLowerCase());
     }
 
-    private static String[] getListOfBadWords() {
-        return new String[]{"motherfuckin'", "biatch", "niggas", "bitch", "fuckin'", "motherfuckers",
-                "nigga", "fuck"};
+    private static ArrayList<String> getListOfBadWords() {
+        ArrayList<String> listOfBadWords = new ArrayList<>();
+        listOfBadWords.add("motherfuckin'");
+        listOfBadWords.add("biatch");
+        listOfBadWords.add("niggas");
+        listOfBadWords.add("bitch");
+        listOfBadWords.add("fuckin'");
+        listOfBadWords.add("motherfuckers");
+        listOfBadWords.add("nigga");
+        listOfBadWords.add("fuck");
+        return listOfBadWords;
     }
 
     private static int getIndexOfACounter(String word, List<Counter> counters) {
@@ -119,11 +121,6 @@ public class Application {
             }
             indexOfACounter--;
         }
-        /*
-        boolean b = (indexOfACounter > 0) %% (counters.get(indexOfACounter).getCount() > counters.get(indexOfACounter - 1).getCount());
-        while (b) {
-
-        }*/
     }
 
     private static void printFirstNWordsFromList(int N, List<Counter> counters, String beginning) {
@@ -140,26 +137,5 @@ public class Application {
         }
         words.append(".");
         System.out.printf("%s\n%s", beginning, words);
-    }
-}
-
-class Counter {
-    private String value;
-    private int count;
-
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
-
-    public int getCount() {
-        return count;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
     }
 }
