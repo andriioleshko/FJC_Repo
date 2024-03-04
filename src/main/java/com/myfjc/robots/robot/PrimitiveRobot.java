@@ -1,8 +1,8 @@
-package main.java.robots.robot;
+package com.myfjc.robots.robot;
 
-import main.java.robots.actions.Move;
-import main.java.robots.actions.Shoot;
-import main.java.robots.actions.Yell;
+import com.myfjc.robots.actions.Move;
+import com.myfjc.robots.actions.Shoot;
+import com.myfjc.robots.actions.Yell;
 
 public class PrimitiveRobot extends Robot implements Yell, Move, Shoot {
     public PrimitiveRobot(String name) {

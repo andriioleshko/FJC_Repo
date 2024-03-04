@@ -1,9 +1,9 @@
-package main.java.robots.robot;
+package com.myfjc.robots.robot;
 
-import main.java.robots.actions.Defence;
-import main.java.robots.actions.Move;
-import main.java.robots.actions.Shoot;
-import main.java.robots.actions.Yell;
+import com.myfjc.robots.actions.Defence;
+import com.myfjc.robots.actions.Move;
+import com.myfjc.robots.actions.Shoot;
+import com.myfjc.robots.actions.Yell;
 
 public class AdvancedRobot extends Robot implements Yell, Move, Shoot, Defence {
     public AdvancedRobot(String name) {

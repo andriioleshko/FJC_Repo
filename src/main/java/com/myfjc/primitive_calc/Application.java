@@ -1,4 +1,4 @@
-package main.java;
+package com.myfjc.primitive_calc;
 
 import java.util.Scanner;
 
@@ -20,11 +20,21 @@ public class Application {
         double value2 = input.nextDouble();
 
         switch (command) {
-            case "+" -> addition(value1, value2);
-            case "-" -> subtraction(value1, value2);
-            case "*" -> multiplication(value1, value2);
-            case "/" -> division(value1, value2);
-            default -> System.out.println("You entered unacceptable command.");
+            case "+":
+                addition(value1, value2);
+                break;
+            case "-":
+                subtraction(value1, value2);
+                break;
+            case "*":
+                multiplication(value1, value2);
+                break;
+            case "/":
+                division(value1, value2);
+                break;
+            default:
+                System.out.println("You entered unacceptable command.");
+                break;
         }
 
     }

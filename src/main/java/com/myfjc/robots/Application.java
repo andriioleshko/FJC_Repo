@@ -1,9 +1,9 @@
-package main.java.robots;
+package com.myfjc.robots;
 
-import main.java.robots.robot.AdvancedRobot;
-import main.java.robots.robot.PrimitiveRobot;
-import main.java.robots.robot.Robot;
-import main.java.robots.robot.StandartRobot;
+import com.myfjc.robots.robot.AdvancedRobot;
+import com.myfjc.robots.robot.PrimitiveRobot;
+import com.myfjc.robots.robot.Robot;
+import com.myfjc.robots.robot.StandartRobot;
 
 import java.util.Random;
 
